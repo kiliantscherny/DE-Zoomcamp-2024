@@ -2,4 +2,5 @@ keys
 .ipynb_checkpoints
 data_pgadmin
 ny_taxi_postgres_data
-week_1/*.csv
+*.csv
+*.gz
