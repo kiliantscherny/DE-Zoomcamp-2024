@@ -135,3 +135,11 @@ python ingest_data.py \
   --table_name=yellow_taxi_trips \
   --url=${URL}
 ```
+
+## TODO 24/01/2024
+- Add the `zones` table to the database
+- Add the green taxi data to the database
+
+
+# 25/01/2021: GCP VM instance setup
+I can also just do `ssh de-zoomcamp` as I have added this to my ssh config file already
