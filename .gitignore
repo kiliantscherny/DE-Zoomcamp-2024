@@ -6,3 +6,7 @@ ny_taxi_postgres_data
 *.csv
 *.gz
 .vscode
+
+# Airflow
+week_2/airflow/dags/__pycache__
+week_2/airflow/logs
