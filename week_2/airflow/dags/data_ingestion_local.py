@@ -19,18 +19,19 @@ PG_DATABASE = os.getenv("PG_DATABASE")
 local_workflow = DAG(
     "LocalIngestionDag",
     schedule_interval="0 6 2 * *",
-    start_date=datetime(2024, 1, 1),
+    start_date=datetime(2019, 1, 1),
+    end_date=datetime(2019, 2, 1),
 )
 
 # url = "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2021-01.parquet"
 # new_url = "https://github.com/DataTalksClub/nyc-tlc-data/releases/download/yellow/yellow_tripdata_2021-07.csv.gz"
 
-URL_PREFIX = "https://d37ci6vzurychx.cloudfront.net/trip-data/"
+URL_PREFIX = "https://github.com/DataTalksClub/nyc-tlc-data/releases/download/yellow/"
 # Depending on the execution date of the task, it will get the correct file from the URL
 URL_TEMPLATE = (
-    URL_PREFIX + "yellow_tripdata_{{ execution_date.strftime(\'%Y-%m\') }}.parquet"
+    URL_PREFIX + "yellow_tripdata_{{ execution_date.strftime('%Y-%m') }}.csv.gz"
 )
-OUTPUT_FILE_TEMPLATE = AIRFLOW_HOME + "/output_{{ execution_date.strftime(\'%Y-%m\') }}"
+OUTPUT_FILE_TEMPLATE = AIRFLOW_HOME + "/output_{{ execution_date.strftime(\'%Y-%m\') }}.csv.gz"
 TABLE_NAME_TEMPLATE = 'yellow_taxi_{{ execution_date.strftime(\'%Y_%m\') }}'
 
 # 2 tasks WGET and ingest
