@@ -143,3 +143,7 @@ python ingest_data.py \
 
 # 25/01/2021: GCP VM instance setup
 I can also just do `ssh de-zoomcamp` as I have added this to my ssh config file already
+
+### Airflow
+To stop the docker-compose airflow container:
+`docker compose down --volumes --rmi all` to remove the volumes and images
