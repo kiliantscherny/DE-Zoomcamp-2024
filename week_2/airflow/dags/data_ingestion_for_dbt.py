@@ -25,6 +25,7 @@ local_workflow = DAG(
     schedule_interval="0 6 2 * *",
     start_date=datetime(2019, 1, 1),
     end_date=datetime(2019, 7, 1),
+    max_active_runs=3,  # Limits concurrent runs to 3
 )
 
 # url = "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2021-01.parquet"
