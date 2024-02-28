@@ -63,7 +63,7 @@ x-airflow-common:
 
     # TODO: Please change GCP_PROJECT_ID & GCP_GCS_BUCKET, as per your config
     GCP_PROJECT_ID: 'dtc-de-kilian'
-    GCP_GCS_BUCKET: 'kilian-bucket'
+    GCP_GCS_BUCKET: 'kilian-bucket-us'
 
     PG_HOST: ${PG_HOST}
     PG_USER: ${PG_USER}
